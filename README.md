@@ -4,6 +4,6 @@
   
   Then you will have to run this command:
   
-    `./setup.rb`
+    ./setup.rb
 
  NB: Make sure to have ruby installed into the bridge server 
