@@ -43,5 +43,6 @@ SERVERS.each do |server|
 		postfix_main_cf = File.read("postfix/main.cf") % RELAY_CONF
 		session.exec! 'echo "' + postfix_main_cf + '" > /etc/postfix/main.cf'
 		session.exec! "/etc/init.d/postfix restart"
+		puts "- Installed postfix on #{server[:host]} ...\n"
   end
 end
