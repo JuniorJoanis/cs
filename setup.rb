@@ -33,7 +33,6 @@ SERVERS.each do |server|
     session.exec! "echo '#{html_page}' > /var/www/html/index.html"
     puts "- Installed nginx on #{server[:host]} \n\n"
 
-
     # Postfix install
     puts "- Installing postfix on #{server[:host]} ...\n"
 
