@@ -28,14 +28,13 @@ smtp_tls_session_cache_database = btree:${data_directory}/smtp_scache
 # information on enabling SSL in the smtp client.
 
 smtpd_relay_restrictions = permit_mynetworks permit_sasl_authenticated defer_unauth_destination
-myhostname = dhcp002.example.net
+myhostname = dhcp009.example.net
 alias_maps = hash:/etc/aliases
 alias_database = hash:/etc/aliases
 myorigin = /etc/mailname
-mydestination = dhcp002.example.net, localhost.example.net, , localhost
-relayhost = [relay.bridge.com]:2525 
+mydestination = your.hostname.com, dhcp009.example.net, localhost.example.net, localhost
+relayhost = %{cloudscreener_host}:%{cloudscreener_port}
 mynetworks = 127.0.0.0/8 [::ffff:127.0.0.0]/104 [::1]/128
-mailbox_command = procmail -a "$EXTENSION"
 mailbox_size_limit = 0
 recipient_delimiter = +
-inet_interfaces = localhost
+inet_interfaces = all
