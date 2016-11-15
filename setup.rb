@@ -42,7 +42,6 @@ SERVERS.each do |server|
 
 		postfix_main_cf = File.read("postfix/main.cf") % RELAY_CONF
 		session.exec! 'echo "' + postfix_main_cf + '" > /etc/postfix/main.cf'
-		puts 'echo "' + postfix_main_cf + '" > /etc/postfix/main.cf'
 		session.exec! "/etc/init.d/postfix restart"
   end
 end
